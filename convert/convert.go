@@ -154,3 +154,12 @@ func SumHardMode(first, second []int) []int {
 	}
 	return reversResult
 }
+
+// BinToDec - перевод двоичного числа в десятичную систему счисления
+func BinToDec(binary []int) int {
+	var decimal int
+
+	// Your code must be here ! ! !
+
+	return decimal
+}
