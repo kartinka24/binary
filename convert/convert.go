@@ -7,14 +7,13 @@ func DecToBin(decimal int) []int {
 	var (
 		binary  []int // двоичный результат числа
 		remains []int // для остатков
-		integer int   // целое от деления
 	)
 
 	for {
-		remains = append(remains, integer%2)
-		integer /= 2
+		remains = append(remains, decimal%2)
+		decimal /= 2
 
-		if integer == 0 {
+		if decimal == 0 {
 			break
 		}
 	}
