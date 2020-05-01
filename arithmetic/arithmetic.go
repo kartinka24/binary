@@ -33,18 +33,18 @@ func SumHardMode(first, second []int) []int {
 	var (
 		reversResult []int // конечный результат - перевернутый
 		result       []int // результат
-		lenfirst     int   // длина первого числа
-		lensecond    int   // длина второго числа
+		lenFirst     int   // длина первого числа
+		lenSecond    int   // длина второго числа
 		memory       int   // память
 	)
 
-	lenfirst = len(first)
-	lensecond = len(second)
+	lenFirst = len(first)
+	lenSecond = len(second)
 
 	// Если первое число длиннее второго
-	if lenfirst >= lensecond {
-		j := lensecond - 1
-		for i := lenfirst - 1; i >= 0; i-- {
+	if lenFirst >= lenSecond {
+		j := lenSecond - 1
+		for i := lenFirst - 1; i >= 0; i-- {
 			//если существует второе число
 			if j >= 0 {
 				if res := first[i] + second[j]; res <= 1 {
@@ -85,8 +85,8 @@ func SumHardMode(first, second []int) []int {
 			memory--
 		}
 	} else { // Если второе число длиннее первого
-		j := lenfirst - 1
-		for i := lensecond - 1; i >= 0; i-- {
+		j := lenFirst - 1
+		for i := lenSecond - 1; i >= 0; i-- {
 			if j >= 0 {
 				if res := second[i] + first[j]; res <= 1 {
 					if memory > 0 {
@@ -96,7 +96,6 @@ func SumHardMode(first, second []int) []int {
 						} else {
 							result = append(result, 0)
 						}
-
 					} else {
 						result = append(result, res)
 					}
@@ -106,9 +105,7 @@ func SumHardMode(first, second []int) []int {
 					} else {
 						memory++
 						result = append(result, 0)
-
 					}
-
 				}
 				j--
 			} else {
