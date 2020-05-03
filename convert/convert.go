@@ -4,22 +4,6 @@ import (
 	"math"
 )
 
-// BinToDec - перевод двоичного числа в десятичную систему счисления
-func BinToDec(binary []int) int {
-	var (
-		decimal int
-		pow     int
-	)
-
-	pow = len(binary) - 1
-	for i := 0; i < len(binary); i++ {
-		decimal += binary[i] * int(math.Pow(2, float64(pow)))
-		pow--
-	}
-
-	return decimal
-}
-
 // ToDec - перевод из любой системы счисления в 10-тичную
 func ToDec(number []int, base int) int {
 	var (
@@ -61,6 +45,22 @@ func DecTo(decimal, base int) []int {
 // **************************************************
 // ******************* ПРОБА ПЕРА *******************
 // **************************************************
+
+// BinToDec - перевод двоичного числа в десятичную систему счисления
+func BinToDec(binary []int) int {
+	var (
+		decimal int
+		pow     int
+	)
+
+	pow = len(binary) - 1
+	for i := 0; i < len(binary); i++ {
+		decimal += binary[i] * int(math.Pow(2, float64(pow)))
+		pow--
+	}
+
+	return decimal
+}
 
 // DecToBin - перевод десятичного числа в двоичную систему счисления
 func DecToBin(decimal int) []int {
